@@ -1,11 +1,13 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import EventDetails from './components/EventDetails';
-import StoryPreview from './components/StoryPreview';
-import AboutUs from './components/AboutUs';
-import PastEvents from './components/PastEvents';
-import Footer from './components/Footer';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import EventDetails from "./components/EventDetails";
+import StoryPreview from "./components/StoryPreview";
+import AboutUs from "./components/AboutUs";
+import PastEvents from "./components/PastEvents";
+import Footer from "./components/Footer";
+import LogoCarousel from "./components/LogoCarousel";
+import AppDownload from "./components/AppDownload";
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
           <EventDetails />
         </section>
         <StoryPreview />
-        <AboutUs />
         <PastEvents />
+        <LogoCarousel />
+        <AppDownload />
       </main>
+
       <Footer />
     </div>
   );

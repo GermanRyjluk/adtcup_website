@@ -47,18 +47,15 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "home" },
-    { name: "Gallery", href: "gallery" },
     { name: "About Us", href: "about" },
-    { name: "FAQ", href: "faq" },
     { name: "Sponsor", href: "sponsor" },
+    { name: "FAQ", href: "faq" },
+    { name: "Gallery", href: "galleryC" },
   ];
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#1B4D98]/80 backdrop-blur-sm shadow-lg"
-          : "bg-transparent"
+      className={`fixed w-full z-50 transition-all duration-300 bg-[#1B4D98]/80 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
