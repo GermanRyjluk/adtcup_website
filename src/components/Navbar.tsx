@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-// 1) Import the navigate hook
-import { useNavigate } from "react-router-dom";
+// 1) For navigation
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,43 +9,60 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // 2) We’ll also need navigate for routing
+  // React Router hooks
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // --- 2) Decide how to track the active section/route
+
+  // A) If on home ("/"), use scroll-based section detection.
+  // B) If on a different route, just set activeSection to match that route.
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      setScrolled(isScrolled);
+    if (location.pathname === "/") {
+      // The user is on the homepage -> enable scroll logic
+      const handleScroll = () => {
+        const isScrolled = window.scrollY > 20;
+        setScrolled(isScrolled);
 
-      // Update active section based on scroll position (for in-page sections)
-      const sections = document.querySelectorAll("section[id]");
-      const scrollPosition = window.scrollY + 100;
+        // Check visible section
+        const sections = document.querySelectorAll("section[id]");
+        const scrollPosition = window.scrollY + 100;
 
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        const sectionId = section.getAttribute("id") || "";
+        sections.forEach((section) => {
+          const sectionTop = (section as HTMLElement).offsetTop;
+          const sectionHeight = (section as HTMLElement).offsetHeight;
+          const sectionId = section.getAttribute("id") || "";
 
-        // Don't set active if it’s "sponsors" (that’s a route, not a section)
-        if (
-          sectionId !== "sponsors" &&
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(sectionId);
-        }
-      });
-    };
+          // If it's in view, set activeSection
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            setActiveSection(sectionId);
+          }
+        });
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      window.addEventListener("scroll", handleScroll);
+      // Run once to set correct initial state
+      handleScroll();
 
-  // 3) In-page scroll
+      return () => window.removeEventListener("scroll", handleScroll);
+    } else {
+      // The user is on some route like "/sponsors", "/faq", etc.
+      setScrolled(false); // optional, up to you
+      // Path is e.g. "/sponsors" -> "sponsors"
+      const routeName = location.pathname.replace("/", "") || "home";
+      setActiveSection(routeName);
+    }
+  }, [location]);
+
+  // We can keep a separate function if you still want in-page scrolling on "/"
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const yOffset = -80; // Account for navbar height
+      const yOffset = -80; // offset for navbar height
       const y =
         section.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
@@ -53,17 +70,16 @@ const Navbar = () => {
     }
   };
 
-  // 4) Decide whether to scroll or navigate
   const handleNavItemClick = (itemHref: string) => {
     if (itemHref === "home") {
       navigate("/");
-    } else {
-      navigate("/" + itemHref);
       setIsOpen(false);
+      return;
     }
+    navigate(`/${itemHref}`);
+    setIsOpen(false);
   };
 
-  // Update your items. The 'href' value "sponsors" is our route path.
   const navItems = [
     { name: "Home", href: "home" },
     { name: "About Us", href: "about" },
@@ -80,10 +96,11 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+          {/* Left Section (Logo + Title) */}
           <div className="flex items-center">
             <div className="flex-shrink-0 relative group flex">
               <img src="/assets/icon.png" alt="Icona" className="h-10 mr-2" />
-              {/* Home goes to in-page scroll. If you want it to /, you can do navigate("/") */}
+              {/* Clicking ADTCUP -> Always go Home */}
               <button
                 onClick={() => handleNavItemClick("home")}
                 className="text-[#FEB635] text-2xl font-bold relative z-10 active:scale-120"
@@ -92,6 +109,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
+
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
@@ -127,7 +145,8 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          {/* Mobile Toggle Button */}
+
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
