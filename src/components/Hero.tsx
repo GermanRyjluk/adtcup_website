@@ -1,19 +1,5 @@
 import React from "react";
-import {
-  MapPin,
-  Trophy,
-  Users,
-  Building2,
-  Map,
-  Compass,
-  Building,
-  Landmark,
-  Mountain,
-  ParkingCircle,
-  Factory,
-  TreePine,
-  Tent,
-} from "lucide-react";
+import { MapPin, Trophy, Users } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -38,7 +24,7 @@ const Hero = () => {
           <div className="inline-block mb-4">
             <div className="bg-[#FEB635]/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6 border border-[#FEB635]/30">
               <span className="text-[#FEB635] font-semibold">
-                Nuova avventura a Torino - 15 Marzo
+                In arrivo: Le Idi di Marzo - 15 Marzo! ✨
               </span>
             </div>
           </div>
@@ -46,13 +32,14 @@ const Hero = () => {
           <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
             <span className="block">La Città è il tuo Playground</span>
             <span className="block text-[#FEB635] mt-2 drop-shadow-[0_0_30px_rgba(254,182,53,0.3)]">
-              ADTCUP
+              ADT CUP
             </span>
           </h1>
 
           <p className="mt-6 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-8 md:text-xl md:max-w-3xl">
-            Caccia al tesoro urbana, giochi divertenti e avventure
-            indimenticabili. Unisciti alla community più coinvolgente d'Italia!
+            Unisciti alla caccia al tesoro più folle di sempre! Sfide, giochi e
+            missioni epiche ti aspettano. Mettiti alla prova, fai nuove amicizie
+            e vinci fantastici premi!
           </p>
 
           <div className="mt-8 max-w-md mx-auto sm:flex sm:justify-center md:mt-10">
@@ -68,32 +55,18 @@ const Hero = () => {
         <div className="mt-20 mb-32 grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col items-center text-white backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
             <div className="transform-gpu transition-transform duration-300 hover:scale-110">
-              <MapPin
-                size={48}
-                className="text-[#FEB635] drop-shadow-[0_0_10px_rgba(254,182,53,0.5)]"
-                strokeWidth={0.5}
-              />
-            </div>
-            <h3 className="mt-4 text-xl font-semibold">Esplora la Città</h3>
-            <p className="mt-2 text-gray-300 text-center">
-              Scopri luoghi nascosti e segreti urbani
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center text-white backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
-            <div className="transform-gpu transition-transform duration-300 hover:scale-110">
               <Trophy
                 size={48}
                 className="text-[#FEB635] drop-shadow-[0_0_10px_rgba(254,182,53,0.5)]"
                 strokeWidth={0.5}
               />
             </div>
-            <h3 className="mt-4 text-xl font-semibold">Vinci Premi</h3>
+            <h3 className="mt-4 text-xl font-semibold">Entra nel gioco</h3>
             <p className="mt-2 text-gray-300 text-center">
-              Competi per fantastici premi e gloria eterna
+              Risolvi indovinelli, sfida gli altri nei giochi e accumula punti
+              per portare la tua squadra alla vittoria!
             </p>
           </div>
-
           <div className="flex flex-col items-center text-white backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
             <div className="transform-gpu transition-transform duration-300 hover:scale-110">
               <Users
@@ -102,9 +75,24 @@ const Hero = () => {
                 strokeWidth={0.5}
               />
             </div>
-            <h3 className="mt-4 text-xl font-semibold">Fai Amicizia</h3>
+            <h3 className="mt-4 text-xl font-semibold">Crea nuovi legami</h3>
             <p className="mt-2 text-gray-300 text-center">
-              Connettiti con persone che condividono la tua passione
+              Conosci nuove persone, stringi amicizie e crea legami che
+              dureranno oltre il gioco!
+            </p>
+          </div>
+          <div className="flex flex-col items-center text-white backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="transform-gpu transition-transform duration-300 hover:scale-110">
+              <MapPin
+                size={48}
+                className="text-[#FEB635] drop-shadow-[0_0_10px_rgba(254,182,53,0.5)]"
+                strokeWidth={0.5}
+              />
+            </div>
+            <h3 className="mt-4 text-xl font-semibold">Vinci la Città</h3>
+            <p className="mt-2 text-gray-300 text-center">
+              Scopri la città in modo unico, supera le prove e conquistala con
+              la tua squadra!
             </p>
           </div>
         </div>

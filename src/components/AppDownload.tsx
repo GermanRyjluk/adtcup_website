@@ -81,13 +81,21 @@ const AppDownload = () => {
               </h2>
 
               <p className="text-xl text-gray-600 mb-8 max-w-lg">
-                Scarica l'app ADTCUP e trasforma ogni angolo della città in
-                un'opportunità per scoprire, giocare e vincere.
+                Ti sei già iscritto? Scarica l’app per entrare nel vivo
+                dell’evento: ricevi indizi, risolvi enigmi e segui la classifica
+                in tempo reale! 📊🔍
+              </p>
+              <p className="text-xl text-gray-600 mb-8 max-w-lg">
+                ⚠️ Attenzione: l’app serve solo per giocare, quindi niente
+                notifiche fastidiose o spam… solo puro divertimento! ⚠️
               </p>
 
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button className="group relative overflow-hidden rounded-2xl bg-black text-white flex items-center transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm">
+                <a
+                  href="https://apps.apple.com/it/app/adt-cup/id6458531252"
+                  className="group relative overflow-hidden rounded-2xl bg-black text-white flex items-center transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+                >
                   <div className="relative flex items-center gap-3 px-8 py-4">
                     <img
                       className="w-7"
@@ -99,9 +107,12 @@ const AppDownload = () => {
                       <div className="text-lg font-bold">App Store</div>
                     </div>
                   </div>
-                </button>
+                </a>
 
-                <button className="group relative overflow-hidden rounded-2xl bg-gray-300 text-gray-800 flex items-center border border-gray-200 transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.ryyuuk.ADTCUP"
+                  className="group relative overflow-hidden rounded-2xl bg-gray-300 text-gray-800 flex items-center border border-gray-200 transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+                >
                   <div className="relative flex items-center gap-3 px-8 py-4">
                     <img
                       className="w-8 h-8"
@@ -115,22 +126,7 @@ const AppDownload = () => {
                       <div className="text-lg font-bold">Google Play</div>
                     </div>
                   </div>
-                </button>
-              </div>
-
-              {/* QR Code */}
-              <div className="flex items-center gap-4 text-sm text-gray-600">
-                <div className="w-24 h-24 bg-gray-100 rounded-xl flex items-center justify-center border border-gray-200">
-                  <QrCode className="w-16 h-16 text-gray-400" />
-                </div>
-                <div>
-                  <p className="font-medium mb-1 text-gray-700">
-                    Scansiona per scaricare
-                  </p>
-                  <p className="text-gray-500">
-                    Inquadra il codice QR con la fotocamera del tuo dispositivo
-                  </p>
-                </div>
+                </a>
               </div>
             </div>
 

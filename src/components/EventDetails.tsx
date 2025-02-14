@@ -9,9 +9,14 @@ const EventDetails = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="p-8">
-            <h2 className="text-3xl font-bold text-[#1B4D98] mb-6">
-              Prossimo Evento: Caccia al Tesoro Torino
-            </h2>
+            <h2 className="text-xl font-bold  mb-8">Prossimo Evento:</h2>
+            {/* <h3 className="text-3xl font-bold text-[#FEB635] mb-2">ADT CUP</h3> */}
+            <h3 className="text-4xl font-bold text-[#1B4D98] mb-2 text-center">
+              ADT CUP
+            </h3>
+            <h3 className="text-2xl font-bold text-[#1B4D98] mb-8 text-center">
+              LE IDI DI MARZO
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -20,7 +25,7 @@ const EventDetails = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Data</h3>
-                    <p>15 Maggio 2024 - 18:30</p>
+                    <p>15 Marzo 2025 - 18:00</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -29,7 +34,7 @@ const EventDetails = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Luogo</h3>
-                    <p>Piazza Vittorio Veneto, Torino</p>
+                    <p>Parco del Valentino, Torino</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -49,19 +54,56 @@ const EventDetails = () => {
                     <h3 className="font-semibold text-lg mb-2">
                       Messaggio dell'organizzatore
                     </h3>
-                    <p className="text-gray-600">
-                      Ciao esploratori! 👋 Siete pronti per una nuova avventura
-                      nel cuore di Torino? Preparatevi a scoprire angoli
-                      nascosti, risolvere enigmi e divertirvi con la vostra
-                      squadra! 🗺️ 🏆
+                    <p className="text-gray-600 ">
+                      Ciao esploratori! 👋 Siete pronti per una nuova avventura?
+                      Vi porteremo nel cuore di San Salvario, un quartiere che
+                      ha tutto: zone verdi perfette per rilassarsi 🌿, locali
+                      della movida dove la serata si accende 🍹, piccole gemme
+                      nascoste che aspettano solo di essere scoperte! 🔍✨
                     </p>
                     <br></br>
-                    <p className="text-gray-600">
-                      Il prezzo include:
-                      <li>Cena tutti insieme</li>
-                      <li>Alcool illimitato durante l'evento</li>
-                      <li>Un dito in culo</li>
+                    <p className="font-semibold text-lg mb-4">
+                      Cosa è compreso nel prezzo:
                     </p>
+                    <ul className="list-none space-y-4 text-gray-600">
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🎯</span>
+                        <span>Un’esperienza indimenticabile</span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🍻</span>
+                        <span>
+                          Alcool illimitato durante tutta la durata dell’evento
+                        </span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🍽️</span>
+                        <span>Cena tutti insieme</span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">📱</span>
+                        <span>
+                          Accesso all’app per ricevere indovinelli ed indizi
+                        </span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🤝</span>
+                        <span>
+                          Gadget epici che vi aiuteranno (o no) durante l’evento
+                        </span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🏆</span>
+                        <span>
+                          La squadra vincitrice potrà scegliere un premio, tra
+                          quelli disponibili nel nostro catalogo
+                        </span>
+                      </li>
+                      <li className="grid grid-cols-[auto_1fr] gap-2">
+                        <span className="text-xl">🎉</span>
+                        <span>Tanti altri premi in palio durante i giochi</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div className="mt-6">

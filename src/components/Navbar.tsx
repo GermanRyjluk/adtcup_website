@@ -85,7 +85,7 @@ const Navbar = () => {
     { name: "About Us", href: "about" },
     { name: "Sponsor", href: "sponsors" },
     { name: "FAQ", href: "faq" },
-    { name: "Gallery", href: "galleryC" },
+    { name: "Gallery", href: "gallery" },
   ];
 
   return (

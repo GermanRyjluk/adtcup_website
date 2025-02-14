@@ -8,6 +8,8 @@ import {
   Calendar,
   MapPin,
   Target,
+  Map,
+  Swords,
 } from "lucide-react";
 
 const StoryPreview = () => {
@@ -22,14 +24,19 @@ const StoryPreview = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white rounded-full filter blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 relative">
+        <div className="mb-16">
+          <h2 className=" text-center text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             La Nostra Storia
           </h2>
+          <p className="text-lg text-gray-200 max-w-2xl mx-auto text-shadow mb-4">
+            Siamo un gruppo di studenti che ha una missione: rivoluzionare il
+            modo di divertirsi.
+          </p>
           <p className="text-lg text-gray-200 max-w-2xl mx-auto text-shadow">
-            Un viaggio iniziato con una semplice idea: rendere la città un
-            playground per tutti
+            Serate tutte uguali, stesse routine, stesso copione. È ora di
+            cambiare le carte in tavola. E’ l’ora di ADT CUP, un format che
+            include:
           </p>
         </div>
 
@@ -37,26 +44,26 @@ const StoryPreview = () => {
           {/* Timeline */}
           <div className="space-y-8">
             <TimelineItem
-              icon={Rocket}
-              title="L'Inizio"
-              date="2020"
-              description="Nel 2020, un gruppo di amici con una passione per l'avventura ha dato vita a ADTCUP"
+              icon={Map}
+              title="Cacce al tesoro"
+              description="Risolvi enigmi, segui gli indizi e scopri la città come non l’hai mai vista!"
               delay={0}
+              date={""}
             />
 
             <TimelineItem
-              icon={Heart}
-              title="La Comunità"
-              date="2021"
-              description="Rapidamente siamo cresciuti fino a diventare una vera famiglia di esploratori urbani"
+              icon={Swords}
+              title="Giochi e sfide"
+              date=""
+              description="Mettiti alla prova con prove alcoliche (e non), enigmi e attività uniche, create proprio per te!"
               delay={200}
             />
 
             <TimelineItem
-              icon={Trophy}
-              title="I Successi"
-              date="2022-Oggi"
-              description="Oggi siamo presenti in 10 città italiane con eventi che coinvolgono migliaia di partecipanti"
+              icon={Users}
+              title="Nuove amicizie"
+              date=""
+              description="Conosci persone nuove e crea legami autentici, in un ambiente dove essere se stessi senza giudizio. "
               delay={400}
             />
           </div>
@@ -162,9 +169,6 @@ const TimelineItem = ({
       <div>
         <div className="flex items-center space-x-2 mb-1">
           <h3 className="text-xl font-bold text-white text-shadow">{title}</h3>
-          <span className="text-sm font-medium text-[#FEB635] bg-[#FEB635]/10 px-2 py-1 rounded-full backdrop-blur-sm">
-            {date}
-          </span>
         </div>
         <p className="text-gray-200 text-shadow">{description}</p>
       </div>

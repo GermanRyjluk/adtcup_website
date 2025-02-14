@@ -8,6 +8,7 @@ import {
   Facebook,
   Youtube,
   Linkedin,
+  PhoneOutgoing,
 } from "lucide-react";
 
 const Footer = () => {
@@ -21,7 +22,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@adtcup.it"
+                  href="mailto:adtcup07@gmail.com"
                   className="flex items-center space-x-2 hover:text-[#FEB635] transition-colors"
                 >
                   <Mail className="w-5 h-5" />
@@ -30,65 +31,13 @@ const Footer = () => {
               </li>
 
               <li>
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-5 h-5" />
-                  <span>Torino, Italia</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">Link Utili</h3>
-            <ul className="space-y-2">
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="hover:text-[#FEB635] transition-colors"
+                <a
+                  href="https://wa.me/393208970258?"
+                  className="flex items-center space-x-2 hover:text-[#FEB635] transition-colors"
                 >
-                  Chi Siamo
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("gallery")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="hover:text-[#FEB635] transition-colors"
-                >
-                  Galleria
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("faq")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="hover:text-[#FEB635] transition-colors"
-                >
-                  FAQ
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("sponsor")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="hover:text-[#FEB635] transition-colors"
-                >
-                  Sponsor
-                </button>
+                  <PhoneOutgoing className="w-5 h-5" />
+                  <span>+39 320 897 0258</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -98,7 +47,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Social Media</h3>
             <div className="grid grid-cols-1 gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/adt_cup?igsh=MTRuYzNiMWZ0dHJldQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:text-[#FEB635] transition-colors"
@@ -107,7 +56,7 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://www.tiktok.com/@adt_cup?_t=ZN-8ttTP4tPVZu&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:text-[#FEB635] transition-colors"
@@ -128,7 +77,7 @@ const Footer = () => {
             <div className="text-sm text-gray-300">
               Designed and developed by{" "}
               <a
-                href="https://github.com/rik"
+                href="https://github.com/GermanRyjluk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#FEB635] hover:underline"

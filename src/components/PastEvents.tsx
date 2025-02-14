@@ -8,25 +8,24 @@ import { Pagination, A11y } from "swiper/modules";
 const events = [
   {
     id: "1",
-    title: "La caccia Fantasma",
+    title: "ADT CUP: La caccia Fantasma",
     date: "1 Novembre 2024",
     location: "Torino",
-    participants: "+25 partecipanti",
+    participants: "+30 partecipanti",
     image:
       "https://firebasestorage.googleapis.com/v0/b/adt-cup.appspot.com/o/events%2FWhatsApp%20Image%202024-10-09%20at%2018.39.36.jpeg?alt=media&token=df453076-92b0-4de5-9e96-6907a2277059",
-    description:
-      "Un viaggio straordinario tra le leggende e i segreti di Torino.",
+    description: "Un viaggio spettrale tra le leggende e i segreti di Torino.",
   },
   {
     id: "2",
-    title: "The original",
+    title: "ADT CUP: L'originale",
     date: "8 e 9 Marzo 2023",
     location: "Torino",
-    participants: "+20 partecipanti",
+    participants: "+25 partecipanti",
     image:
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fassets.vogue.com%2Fphotos%2F633eefaf4f85bd18e8ffbc47%2Fmaster%2Fw_2560%252Cc_limit%2FGettyImages-690073036.jpg&f=1&nofb=1&ipt=c0d704e919f090d576b9095dd3df03345ed430fa3654ca2a0cf191d0a8ed0808&ipo=images",
     description:
-      "Un’esperienza tra amici, scoprendo i bar più originali e i posti più suggestivi di Torino.",
+      "Il nostro primo evento, da cui poi è nato tutto. Alla scoperta dei luoghi e dei bar più pazzi della città.",
   },
 ];
 
@@ -34,12 +33,15 @@ const PastEvents = () => {
   return (
     <section id="past-events" className="pt-24 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1B4D98] mb-4">
+        <div className="mb-8 px-4">
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#1B4D98] mb-8">
             Eventi Passati
           </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto m-2">
+            Sei curioso di sapere cosa accade durante i nostri eventi?
+          </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Rivivi i momenti più belli delle nostre avventure passate
+            Rivivi i momenti più epici delle nostre avventure
           </p>
         </div>
 
