@@ -19,7 +19,7 @@ import {
 const EventDetails = () => {
   return (
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
         {/* Intro & Overview */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-bold text-[#1B4D98] mb-6">
@@ -238,6 +238,7 @@ const EventDetails = () => {
           </div>
         </div>
       </div>
+      <div className="relative bottom-0 left-0 right-0 w-full h-[5vh] bg-gradient-to-t from-gray-50 to-transparent" />
     </div>
   );
 };
