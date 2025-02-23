@@ -111,9 +111,11 @@ const EventDetails = () => {
                   <p className="text-2xl font-bold text-[#1B4D98]">
                     €25 / persona
                   </p>
-                  <button className="mt-4 w-full bg-[#FEB635] text-[#1B4D98] font-semibold py-3 px-4 rounded-lg transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm">
-                    Inizia l'avventura 🚀
-                  </button>
+                  <a href="/event">
+                    <button className="mt-4 w-full bg-[#FEB635] text-[#1B4D98] font-semibold py-3 px-4 rounded-lg transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm">
+                      Inizia l'avventura 🚀
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

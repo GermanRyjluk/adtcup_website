@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import SponsorGrid from "../components/SponsorGrid";
+import Navbar from "../components/Shared/Navbar";
+import Footer from "../components/Shared/Footer";
+import SponsorGrid from "../components/SponsorsPage/SponsorGrid";
 
 const SponsorsPage: React.FC = () => {
   return (

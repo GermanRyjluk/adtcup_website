@@ -1,13 +1,12 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import EventDetails from "../components/EventDetails";
-import StoryPreview from "../components/StoryPreview";
-import AboutUs from "../components/AboutUs";
-import PastEvents from "../components/PastEvents";
-import Footer from "../components/Footer";
-import LogoCarousel from "../components/LogoCarousel";
-import AppDownload from "../components/AppDownload";
+import Navbar from "../components/Shared/Navbar";
+import Hero from "../components/HomePage/Hero";
+import EventDetails from "../components/HomePage/EventDetails";
+import StoryPreview from "../components/HomePage/StoryPreview";
+import PastEvents from "../components/HomePage/PastEvents";
+import Footer from "../components/Shared/Footer";
+import LogoCarousel from "../components/HomePage/LogoCarousel";
+import AppDownload from "../components/HomePage/AppDownload";
 
 function App() {
   return (

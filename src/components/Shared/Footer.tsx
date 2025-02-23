@@ -8,7 +8,7 @@ import {
   Facebook,
   Youtube,
   Linkedin,
-  PhoneOutgoing,
+  MessageCircleMore,
 } from "lucide-react";
 
 const Footer = () => {
@@ -35,7 +35,7 @@ const Footer = () => {
                   href="https://wa.me/393208970258?"
                   className="flex items-center space-x-2 hover:text-[#FEB635] transition-colors"
                 >
-                  <PhoneOutgoing className="w-5 h-5" />
+                  <MessageCircleMore className="w-5 h-5" />
                   <span>+39 320 897 0258</span>
                 </a>
               </li>
