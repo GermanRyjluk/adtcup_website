@@ -127,7 +127,7 @@ const EventDetails = () => {
                 <div>
                   <h4 className="font-semibold mb-2">Prezzo</h4>
                   <p className="text-2xl font-bold text-[#1B4D98]">
-                    €25 / persona
+                    €20 / persona
                   </p>
                   <a href="/currentEvent">
                     <button className="mt-4 w-full bg-[#FEB635] text-[#1B4D98] font-semibold py-3 px-4 rounded-lg transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm">

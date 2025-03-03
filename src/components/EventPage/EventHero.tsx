@@ -33,22 +33,25 @@ const EventHero = () => {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32">
         <div className="text-center text-white">
+          <h2 className="text-2xl md:text-6xl font-bold mb-2 drop-shadow-lg">
+            ADT CUP
+          </h2>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            La Grande Caccia al Tesoro di Milano
+            Le idi di Marzo
           </h1>
 
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             <div className="flex items-center gap-2">
               <Calendar className="w-6 h-6 text-[#FEB635]" />
-              <span className="text-lg">15 Maggio 2024</span>
+              <span className="text-lg">Sabato 15 Marzo 2025</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-6 h-6 text-[#FEB635]" />
-              <span className="text-lg">14:30 - 18:30</span>
+              <span className="text-lg">18:00</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-6 h-6 text-[#FEB635]" />
-              <span className="text-lg">Piazza Duomo, Milano</span>
+              <span className="text-lg">Parco del Valentino, Torino</span>
             </div>
           </div>
 
@@ -56,14 +59,14 @@ const EventHero = () => {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20">
               <p className="text-xl mb-6">
-                Un'avventura unica alla scoperta dei segreti nascosti di Milano.
+                Un'avventura unica alla scoperta dei segreti nascosti di Torino.
                 Enigmi, misteri e premi straordinari ti aspettano!
               </p>
               <button className="bg-[#FEB635] text-[#1B4D98] px-8 py-4 rounded-xl font-bold text-lg transition transform duration-300 hover:scale-105 hover:bg-[#FEB635]/90 shadow-lg">
                 Inizia l'Avventura
               </button>
               <p className="mt-4 text-sm text-gray-200">
-                Solo {50 - 32} posti rimasti!
+                Non fartelo raccontare!
               </p>
             </div>
           </div>
@@ -71,7 +74,7 @@ const EventHero = () => {
       </div>
 
       {/* Gradient Fade Transition */}
-      <div className="absolute bottom-0 left-0 right-0 w-full h-[15vh] bg-gradient-to-t from-white to-transparent" />
+      {/* <div className="absolute bottom-0 left-0 right-0 w-full h-[15vh] bg-gradient-to-t from-white to-transparent" /> */}
     </div>
   );
 };

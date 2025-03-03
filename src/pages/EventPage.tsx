@@ -4,6 +4,7 @@ import EventDetails from "../components/EventPage/EventDetails";
 import GameGuide from "../components/EventPage/GameGuide";
 import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer";
+import ManualeADT from "../components/Shared/ManualeADT";
 
 function EventPage() {
   return (
