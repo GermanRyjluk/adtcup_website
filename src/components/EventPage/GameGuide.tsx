@@ -5,15 +5,10 @@ import {
   Gamepad,
   Mail,
   Store,
-  PlayCircle,
   PhoneCall,
-  Trophy,
   Users,
   Youtube,
-  // Aggiungi altre icone Lucide se ti servono per il catalogo
-  Gift,
-  Ticket,
-  MapPin,
+  FileText,
 } from "lucide-react";
 
 const GameGuide = () => {
@@ -24,7 +19,7 @@ const GameGuide = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1B4D98] mb-4">
-              Unisciti ad ADTCUP
+              Unisciti ad ADT CUP
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Unisciti alla community più epica di esploratori urbani e vivi
@@ -38,8 +33,8 @@ const GameGuide = () => {
               <Step
                 number={1}
                 icon={UserPlus}
-                title="Compila il form"
-                description="Compila il form ADT della personalità per trovarti i compagni migliori"
+                title="Compila il questionario"
+                description="Metodo ADT: formiamo squadre basate sulla tua personalità per farti vivere l’esperienza al massimo!"
                 details={[
                   "Premi il bottone in basso",
                   "Compila il questionario",
@@ -51,20 +46,23 @@ const GameGuide = () => {
                 number={2}
                 icon={Download}
                 title="Scarica l'App"
-                description="Necessaria per la partecipazione all'evento"
-                details={["Ricevi indovinelli e indizi", "asdasd"]}
+                details={[
+                  "Crea il tuo account",
+                  "Verifica la tua email",
+                  'Premi "Gioca" sull’evento ADT CUP: LE IDI DI MARZO',
+                ]}
               />
 
               <Step
                 number={3}
                 icon={Gamepad}
-                title="Registrati e ultimi step"
-                description="Personalizza la tua esperienza"
+                title="Finalizza l’iscrizione"
                 details={[
-                  "Accedi con il tuo account",
-                  "Scegli la tua regione",
-                  "Seleziona il personaggio",
-                  "Tutorial di 5 minuti",
+                  "Avanza dopo aver letto le brevi descrizioni dell’evento",
+                  "Accetta i Termini e Condizioni",
+                  'Premi su "Compila il questionario" (anche se lo hai gia fatto)',
+                  "Attendi la risposta dell'ADT Team",
+                  "Una volta accettato segui le istruzioni sull'app",
                 ]}
               />
             </div>
@@ -72,9 +70,49 @@ const GameGuide = () => {
             {/* Download Cards */}
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                <div className="flex flex-col items-center mb-6">
+                  <h3 className="text-2xl font-bold text-[#1B4D98]">
+                    Compila il questionario
+                  </h3>
+                  <p className="text-center mt-2">
+                    Questionario della personalità per trovarti i compagni più
+                    adatti a te
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSc8BZMaEe2C4l2vzO0K2NxCHAoDX1TZ_AiYZ9qcBiX8uaZXiw/viewform?pli=1"
+                    className="group relative overflow-hidden rounded-2xl bg-[#FEB635] text-white flex items-center transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+                  >
+                    <div className="relative flex items-center gap-3 px-8 py-4">
+                      <img
+                        className="w-7"
+                        src="/assets/GoogleForms.png"
+                        alt="Google Forms logo"
+                      />
+                      <div>
+                        <div className="text-sm opacity-90 text-[#1B4D98]">
+                          Compila
+                        </div>
+                        <div className="text-lg font-bold text-[#1B4D98]">
+                          Google Form
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* <button className="flex items-center justify-center gap-3 bg-[#1B4D98] text-white p-4 rounded-xl hover:bg-[#1B4D98]/90 transition-colors">
+                    <Store className="w-6 h-6" />
+                    <div className="text-left">
+                      <div className="text-xs opacity-75">Disponibile su</div>
+                      <div className="font-semibold">Google Play</div>
+                    </div>
+                  </button> */}
+                </div>
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-2xl font-bold text-[#1B4D98]">
-                    Scarica Ora
+                    Scarica App
                   </h3>
                   <div className="flex items-center gap-2 text-[#FEB635]">
                     <Users className="w-5 h-5" />
@@ -83,21 +121,41 @@ const GameGuide = () => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                  <button className="flex items-center justify-center gap-3 bg-black text-white p-4 rounded-xl hover:bg-black/90 transition-colors">
-                    <Store className="w-6 h-6" />
-                    <div className="text-left">
-                      <div className="text-xs opacity-75">Scarica su</div>
-                      <div className="font-semibold">App Store</div>
+                  <a
+                    href="https://apps.apple.com/it/app/adt-cup/id6458531252"
+                    className="group relative overflow-hidden rounded-2xl bg-black text-white flex items-center transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+                  >
+                    <div className="relative flex items-center gap-3 px-8 py-4">
+                      <img
+                        className="w-7"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Apple_logo_white.svg/1010px-Apple_logo_white.svg.png?20220821122232"
+                        alt="Apple logo"
+                      />
+                      <div>
+                        <div className="text-sm opacity-90">Scarica su</div>
+                        <div className="text-lg font-bold">App Store</div>
+                      </div>
                     </div>
-                  </button>
+                  </a>
 
-                  <button className="flex items-center justify-center gap-3 bg-[#1B4D98] text-white p-4 rounded-xl hover:bg-[#1B4D98]/90 transition-colors">
-                    <Store className="w-6 h-6" />
-                    <div className="text-left">
-                      <div className="text-xs opacity-75">Disponibile su</div>
-                      <div className="font-semibold">Google Play</div>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.ryyuuk.ADTCUP"
+                    className="group relative overflow-hidden rounded-2xl bg-gray-300 text-gray-800 flex items-center border border-gray-200 transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+                  >
+                    <div className="relative flex items-center gap-3 px-8 py-4">
+                      <img
+                        className="w-8 h-8"
+                        src="https://www.svgrepo.com/show/145061/android-logo.svg"
+                        alt="Android logo"
+                      />
+                      <div>
+                        <div className="text-sm text-gray-500">
+                          Disponibile su
+                        </div>
+                        <div className="text-lg font-bold">Google Play</div>
+                      </div>
                     </div>
-                  </button>
+                  </a>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 items-center justify-between p-4 bg-gray-50 rounded-xl">
@@ -106,11 +164,12 @@ const GameGuide = () => {
                     <div className="text-sm">
                       <strong>Guarda il tutorial:</strong>
                       <br />
-                      Se non hai capito niente, tranquil@, guarda questo video
+                      Non hai capito niente? Segui il nostro tutorial su
+                      YoutTube!
                     </div>
                   </div>
                   <a
-                    href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+                    href="https://www.youtube.com/watch?v=BYCmS-aJ8F4"
                     className="whitespace-nowrap px-4 py-2 bg-[#FEB635] text-[#1B4D98] rounded-lg font-semibold hover:bg-[#FEB635]/90 active:scale-95 transition-transform duration-75"
                   >
                     Video tutorial

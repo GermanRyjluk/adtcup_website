@@ -10,6 +10,7 @@ import {
   Globe,
   Trophy,
   MapPin,
+  Youtube,
 } from "lucide-react";
 
 const AppDownload = () => {
@@ -135,24 +136,23 @@ const AppDownload = () => {
               <div className="relative">
                 {/* Subtle background glow behind the phone */}
                 <div className="absolute inset-0 bg-[#1B4D98] rounded-full filter blur-3xl opacity-20 scale-150"></div>
-
-                <div className="relative hover:translate-y-[-10px] transition-transform duration-700">
-                  <img
-                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&fit=crop&q=80"
-                    alt="App Preview"
-                    className="w-64 rounded-[32px] shadow-2xl"
-                    loading="lazy"
-                  />
-
-                  {/* Floating Elements */}
-                  <div className="absolute -right-16 top-12 transform rotate-12 bg-[#FEB635]/10 backdrop-blur-md rounded-xl p-4 border border-[#FEB635]/30 shadow-xl animate-float-slow">
-                    <Trophy className="w-6 h-6 text-[#FEB635]" />
-                  </div>
-                  <div className="absolute -left-12 bottom-24 transform -rotate-12 bg-[#FEB635]/10 backdrop-blur-md rounded-xl p-4 border border-[#FEB635]/30 shadow-xl animate-float-medium">
-                    <MapPin className="w-6 h-6 text-[#FEB635]" />
-                  </div>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div className="flex items-center gap-3">
+                <Youtube className="w-10 h-10 text-[#FEB635]" />
+                <div className="text-sm">
+                  <strong>Video tutorial:</strong>
+                  <br />
+                  Segui la nostra guida step by step su YoutTube per iscriverti!
                 </div>
               </div>
+              <a
+                href="https://www.youtube.com/watch?v=BYCmS-aJ8F4"
+                className="whitespace-nowrap px-4 py-2 bg-[#FEB635] text-[#1B4D98] rounded-lg font-semibold hover:bg-[#FEB635]/90 active:scale-95 transition-transform duration-75"
+              >
+                Video tutorial
+              </a>
             </div>
           </div>
         </div>

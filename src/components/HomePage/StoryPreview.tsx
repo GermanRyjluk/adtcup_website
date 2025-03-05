@@ -72,33 +72,44 @@ const StoryPreview = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <ImageCard
-                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&fit=crop&q=80"
+                src="https://firebasestorage.googleapis.com/v0/b/adt-cup.appspot.com/o/EventPhotos%2FADT%20CUP%20%20%20Vinci%20la%20citta%CC%80!%20Prima%20edizione%2C%20Marzo%202023%20%23adtcup%20%23torino.jpg?alt=media&token=7b98ef3b-0dc8-4e0b-bcaa-19ad18879e9a"
                 alt="Il nostro primo evento"
                 delay={100}
               />
-              <ImageCard
+              {/* <ImageCard
                 src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&fit=crop&q=80"
                 alt="La nostra community"
                 delay={300}
-              />
+              /> */}
             </div>
             <div className="space-y-4 pt-8">
               <ImageCard
-                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&fit=crop&q=80"
+                src="https://firebasestorage.googleapis.com/v0/b/adt-cup.appspot.com/o/EventPhotos%2F2024-11-02%2004.08.59%201.png?alt=media&token=788589e7-a19d-4446-816e-a8abc28a6002"
                 alt="Momenti di gioco"
                 delay={200}
               />
-              <ImageCard
+              {/* <ImageCard
                 src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&fit=crop&q=80"
                 alt="Celebrazioni"
                 delay={400}
-              />
+              /> */}
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 max-w-md mx-auto sm:flex sm:justify-center md:mt-10">
+          <div className="rounded-md shadow-[0_0_30px_rgba(254,182,53,0.3)]">
+            <a
+              href="/aboutUs"
+              className="inline-flex items-center justify-center w-full bg-[#FEB635] text-[#1B4D98] px-8 py-4 rounded-lg font-semibold text-lg transition transform duration-150 shadow-lg active:scale-95 active:shadow-sm"
+            >
+              <span className="mr-4">Scopri di più su di noi</span>
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+        {/* <div className="mt-16 text-center">
           <button
             onClick={() =>
               document
@@ -110,7 +121,7 @@ const StoryPreview = () => {
             <span>Scopri di più su di noi</span>
             <ArrowRight className="w-5 h-5" />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

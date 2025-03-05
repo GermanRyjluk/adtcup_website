@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-// 1) For navigation
 import { useNavigate, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,32 +9,21 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // React Router hooks
   const navigate = useNavigate();
   const location = useLocation();
 
-  // --- 2) Decide how to track the active section/route
-
-  // A) If on home ("/"), use scroll-based section detection.
-  // B) If on a different route, just set activeSection to match that route.
-
   useEffect(() => {
     if (location.pathname === "/") {
-      // The user is on the homepage -> enable scroll logic
       const handleScroll = () => {
         const isScrolled = window.scrollY > 20;
         setScrolled(isScrolled);
 
-        // Check visible section
         const sections = document.querySelectorAll("section[id]");
         const scrollPosition = window.scrollY + 100;
-
         sections.forEach((section) => {
           const sectionTop = (section as HTMLElement).offsetTop;
           const sectionHeight = (section as HTMLElement).offsetHeight;
           const sectionId = section.getAttribute("id") || "";
-
-          // If it's in view, set activeSection
           if (
             scrollPosition >= sectionTop &&
             scrollPosition < sectionTop + sectionHeight
@@ -43,32 +32,15 @@ const Navbar = () => {
           }
         });
       };
-
       window.addEventListener("scroll", handleScroll);
-      // Run once to set correct initial state
       handleScroll();
-
       return () => window.removeEventListener("scroll", handleScroll);
     } else {
-      // The user is on some route like "/sponsors", "/faq", etc.
-      setScrolled(false); // optional, up to you
-      // Path is e.g. "/sponsors" -> "sponsors"
+      setScrolled(false);
       const routeName = location.pathname.replace("/", "") || "home";
       setActiveSection(routeName);
     }
   }, [location]);
-
-  // We can keep a separate function if you still want in-page scrolling on "/"
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const yOffset = -80; // offset for navbar height
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
 
   const handleNavItemClick = (itemHref: string) => {
     if (itemHref === "home") {
@@ -82,14 +54,25 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "home" },
-    { name: "About Us", href: "about" },
-    { name: "Sponsor", href: "sponsors" },
-    { name: "FAQ", href: "faq" },
-    { name: "Gallery", href: "gallery" },
+    { name: "About Us", href: "aboutUs" },
+    { name: "Manuale ADT", href: "manualeADT" },
   ];
 
+  // Framer Motion variants for the navbar fade/slide animation.
+  const navVariants = {
+    hidden: { opacity: 0, y: -40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.0, ease: "easeOut" },
+    },
+  };
+
   return (
-    <nav
+    <motion.nav
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
       className={`fixed w-full z-50 bg-[#1B4D98] ${
         scrolled ? "shadow-md" : ""
       } transition-shadow`}
@@ -100,7 +83,6 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 relative group flex">
               <img src="/assets/icon.png" alt="Icona" className="h-10 mr-2" />
-              {/* Clicking ADTCUP -> Always go Home */}
               <button
                 onClick={() => handleNavItemClick("home")}
                 className="text-[#FEB635] text-2xl font-bold relative z-10 active:scale-120"
@@ -114,17 +96,17 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) => (
-                <a
+                <motion.a
                   key={item.name}
                   onClick={() => handleNavItemClick(item.href)}
                   onMouseEnter={() => setHoveredItem(item.name)}
                   onMouseLeave={() => setHoveredItem(null)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors group
-                    ${
-                      activeSection === item.href
-                        ? "text-[#FEB635]"
-                        : "text-white hover:text-[#FEB635]"
-                    }`}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors group ${
+                    activeSection === item.href
+                      ? "text-[#FEB635]"
+                      : "text-white hover:text-[#FEB635]"
+                  }`}
+                  whileHover={{ scale: 1.05 }}
                 >
                   {item.name}
                   <div
@@ -141,7 +123,7 @@ const Navbar = () => {
                         : "scale-95 opacity-0"
                     }`}
                   />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -185,12 +167,11 @@ const Navbar = () => {
                 <button
                   key={item.name}
                   onClick={() => handleNavItemClick(item.href)}
-                  className={`block text-3xl font-bold transition-colors w-full text-left
-                    ${
-                      activeSection === item.href
-                        ? "text-[#FEB635]"
-                        : "text-white hover:text-[#FEB635]"
-                    }`}
+                  className={`block text-3xl font-bold transition-colors w-full text-left ${
+                    activeSection === item.href
+                      ? "text-[#FEB635]"
+                      : "text-white hover:text-[#FEB635]"
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -203,7 +184,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

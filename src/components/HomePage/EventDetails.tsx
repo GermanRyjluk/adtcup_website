@@ -29,7 +29,7 @@ const EventDetails = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg">Data</h3>
-                    <p className="text-gray-700">15 Marzo 2025 - 18:00</p>
+                    <p className="text-gray-700">15 Marzo 2025 - 17:30</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

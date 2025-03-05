@@ -19,7 +19,7 @@ function App() {
         </section>
         <StoryPreview />
         <PastEvents />
-        <LogoCarousel />
+        {/* <LogoCarousel /> */}
         <AppDownload />
       </main>
 
